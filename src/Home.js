@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+
 import { connect } from "react-redux";
 
 const Home = (props) => {
@@ -7,7 +9,11 @@ const Home = (props) => {
       Home Component name-{props.name} age-{props.age}
       <button
         onClick={() => {
-          props.changeName();
+          axios
+            .get("https://jsonplaceholder.typicode.com/users")
+            .then((res) => {
+              props.changeName(res.data[0].name);
+            });
         }}
       >
         Change Name
@@ -22,8 +28,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeName: () => {
-      dispatch({ type: "change_name", payload: "Ramesh" });
+    changeName: (name) => {
+      dispatch({ type: "change_name", payload: name });
     },
   };
 };

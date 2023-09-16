@@ -1,6 +1,6 @@
 const obj = {
   name: "naveen",
-  age: 20,
+  age: 25,
 };
 
 export const reducer = (state = obj, action) => {
@@ -8,6 +8,11 @@ export const reducer = (state = obj, action) => {
     return {
       ...state,
       name: action.payload,
+    };
+  } else if (action.type === "change_age") {
+    return {
+      ...state,
+      age: action.payload,
     };
   }
 
