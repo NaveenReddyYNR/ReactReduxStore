@@ -6,8 +6,15 @@ const App = (props) => {
   return (
     <div>
       <h1>
-        <Profile />
         App Component name-{props.name} age-{props.age}
+        <button
+          onClick={() => {
+            props.changeName();
+          }}
+        >
+          Change Name
+        </button>
+        <Profile />
       </h1>
     </div>
   );

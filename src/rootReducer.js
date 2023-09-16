@@ -4,6 +4,12 @@ const obj = {
 };
 
 export const reducer = (state = obj, action) => {
+  if (action.type === "change_name") {
+    return {
+      ...state,
+      name: action.payload,
+    };
+  }
 
-    return state;
+  return state;
 };

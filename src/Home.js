@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 
 const Home = (props) => {
   return (
-    <div>
+    <h1>
       Home Component name-{props.name} age-{props.age}
-    </div>
+    </h1>
   );
 };
 

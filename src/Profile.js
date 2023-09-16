@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 
 const Profile = (props) => {
   return (
-    <div>
+    <h1>
       Profile Component name-{props.name} age-{props.age}
-    </div>
+    </h1>
   );
 };
 
