@@ -7,29 +7,29 @@ const App = (props) => {
     <div>
       <h1>
         App Component name-{props.name} age-{props.age}
-        <button
+        {/* <button
           onClick={() => {
             props.changeName();
           }}
         >
           Change Name
-        </button>
+        </button> */}
         <Profile />
       </h1>
     </div>
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    changeName: () => {
-      dispatch({ type: "change_name", payload: "Ramesh" });
-    },
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     changeName: () => {
+//       dispatch({ type: "change_name", payload: "Ramesh" });
+//     },
+//   };
+// };
 
 const mapStateToProps = (state) => {
   return state;
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
